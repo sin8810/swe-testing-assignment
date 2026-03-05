@@ -1,150 +1,76 @@
-\# Testing Strategy
+# Testing Strategy
 
+This document describes the testing approach used for the Quick-Calc calculator application.
 
-
-This project uses both \*\*unit testing\*\* and \*\*integration testing\*\* to verify the functionality of the Quick-Calc application.
-
-
-
----
-
-
-
-\## What Was Tested
-
-
+## What Was Tested
 
 The following components were tested:
 
+* Addition operation
+* Subtraction operation
+* Multiplication operation
+* Division operation
+* Division by zero handling
+* Negative numbers
+* Decimal numbers
+* Large numbers
+* Interaction between the CLI interface and calculator logic
+* Clear function behavior
 
+## What Was Not Tested
 
-\* Individual arithmetic operations (addition, subtraction, multiplication, division)
+The project focuses on **functional correctness**, so the following were not tested:
 
-\* Edge cases such as division by zero
+* Performance testing
+* Security testing
+* User interface design
+* Load or stress testing
 
-\* Negative numbers and decimal values
+These areas are outside the scope of this assignment.
 
-\* Interaction between the CLI interface and calculator logic
+## Testing Pyramid
 
+The project follows the concept of the **Testing Pyramid**, which suggests having many unit tests and fewer integration tests.
 
+Test distribution in this project:
 
----
+* **8 Unit Tests**
+* **2 Integration Tests**
 
+Unit tests verify individual functions of the calculator, while integration tests verify that different parts of the application work correctly together.
 
+## Black-Box vs White-Box Testing
 
-\## What Was Not Tested
+Two testing approaches were applied in this project.
 
+**White-Box Testing (Unit Tests)**
+Unit tests directly access internal calculator functions and verify their outputs. This means the internal implementation of the code is known during testing.
 
+**Black-Box Testing (Integration Tests)**
+Integration tests simulate how a user interacts with the calculator without focusing on internal code implementation.
 
-Non-functional aspects such as performance, usability, and scalability were not tested.
+## Functional vs Non-Functional Testing
 
-This project focuses primarily on verifying the \*\*functional correctness\*\* of the calculator operations.
+The project mainly focuses on **functional testing**, verifying that mathematical operations produce correct results.
 
+Non-functional aspects such as performance, usability, and scalability were not tested because they are outside the scope of this assignment.
 
+## Regression Testing
 
----
+The test suite can also act as a **regression testing tool**.
+If the calculator is updated or new features are added in the future, running the existing test suite ensures that previously working functionality has not been broken.
 
-
-
-\## Testing Pyramid
-
-
-
-The testing pyramid recommends having many unit tests and fewer integration tests.
-
-
-
-This project follows this structure:
-
-
-
-\* \*\*8 Unit Tests\*\*
-
-\* \*\*2 Integration Tests\*\*
-
-
-
-Unit tests verify individual methods of the calculator class, while integration tests ensure that the CLI interface correctly interacts with the calculator logic.
-
-
-
----
-
-
-
-\## Black-Box vs White-Box Testing
-
-
-
-Unit tests primarily use \*\*white-box testing\*\*, because they directly test internal functions and logic of the calculator.
-
-
-
-Integration tests use a \*\*black-box testing\*\* approach because they test the system from the perspective of user interaction without focusing on internal implementation.
-
-
-
----
-
-
-
-\## Functional vs Non-Functional Testing
-
-
-
-The tests implemented in this project focus on \*\*functional testing\*\*, verifying that the calculator performs mathematical operations correctly.
-
-
-
-Non-functional testing such as performance or load testing was not included because it is outside the scope of this assignment.
-
-
-
----
-
-
-
-\## Regression Testing
-
-
-
-The test suite can also act as a \*\*regression testing tool\*\*.
-
-If new features are added in the future, running the existing tests ensures that previously working functionality has not been broken.
-
-
-
----
-
-
-
-\## Test Results Summary
-
-
+## Test Results Summary
 
 | Test Name                    | Type        | Status |
-
 | ---------------------------- | ----------- | ------ |
-
-| test\_addition                | Unit        | Pass   |
-
-| test\_subtraction             | Unit        | Pass   |
-
-| test\_multiplication          | Unit        | Pass   |
-
-| test\_division                | Unit        | Pass   |
-
-| test\_negative\_numbers        | Unit        | Pass   |
-
-| test\_decimal\_numbers         | Unit        | Pass   |
-
-| test\_large\_numbers           | Unit        | Pass   |
-
-| test\_divide\_by\_zero          | Unit        | Pass   |
-
-| test\_user\_addition\_flow      | Integration | Pass   |
-
-| test\_clear\_after\_calculation | Integration | Pass   |
-
-
-
+| test_addition                | Unit        | Pass   |
+| test_subtraction             | Unit        | Pass   |
+| test_multiplication          | Unit        | Pass   |
+| test_division                | Unit        | Pass   |
+| test_negative_numbers        | Unit        | Pass   |
+| test_decimal_numbers         | Unit        | Pass   |
+| test_large_numbers           | Unit        | Pass   |
+| test_divide_by_zero          | Unit        | Pass   |
+| test_user_addition_flow      | Integration | Pass   |
+| test_clear_after_calculation | Integration | Pass   |
